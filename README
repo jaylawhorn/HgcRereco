@@ -1,0 +1,4 @@
+* check out CMSSW_6_2_0_SLHC23
+* merge pull requests via git cms-merge-topic username:branchName ** not tested b/c there's no pull request...
+* compile, tar
+
