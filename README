@@ -1,4 +1,28 @@
-* check out CMSSW_6_2_0_SLHC23
-* merge pull requests via git cms-merge-topic username:branchName ** not tested b/c there's no pull request...
-* compile, tar
+//
+// Jay Lawhorn 03 Feb 2015
+//
 
+These two scripts setup and run re-reco jobs on lxbatch for HGC.
+
+****** hgc-submit.sh does the job submission
+
+* RELVAL_SOURCE specifies the location of the relval samples we're re-reconstructing
+
+* RELVAL_LIST takes an array of dataset names. you can specify all datasets in the relval directory with
+  >> RELVAL_LIST=(`/afs/cern.ch/project/eos/installation/0.3.4/bin/eos.select ls /store/relval/CMSSW_6_2_0_SLHC23/`)
+  or just one dataset with
+  >> RELVAL_LIST=(RelValQCDForPF_14TeV)
+
+* GEO_PU specifies the geometry and pileup conditions (?) we're interested in. examples would be
+  >> GEO_PU=PH2_1K_FB_V6_UPGHGCalV5-v1
+  or
+  >> GEO_PU=PU_PH2_1K_FB_V6_HGCalV5PU140-v1
+
+* NEVT specifies the number of events to run over (used exactly as cmsDriver -n $NEVT)
+
+* OUTPUT_EOS gives the target location on the CERN EOS space
+
+* LOG_DIR is where the lxbatch LSFJOB (*.out) and STDERR (*.err) will be stored in the same directory structure as
+  the relval source
+
+****** hgc-run.sh is executed as the batch job

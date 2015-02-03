@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#RELVAL_LIST=(`/afs/cern.ch/project/eos/installation/0.3.4/bin/eos.select ls /store/relval/CMSSW_6_2_0_SLHC23/`)
 RELVAL_SOURCE=/store/relval/CMSSW_6_2_0_SLHC23
 RELVAL_LIST=(RelValQCDForPF_14TeV)
 GEO_PU=PH2_1K_FB_V6_UPGHGCalV5-v1

@@ -51,5 +51,3 @@ sed -i "${addRecHits}" step3_RAW2DIGI_L1Reco_RECO.py
 cmsRun step3_RAW2DIGI_L1Reco_RECO.py
 
 cmsStage ${IN_FILE} ${OUT_DIR}/${IN_DATA_SET}/${IN_BOOK}/
-
-#rm ${IN_FILE}
